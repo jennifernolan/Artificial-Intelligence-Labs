@@ -1,0 +1,16 @@
+%% input list is empty = output list is empty
+replace_a_b_c([],[]).
+
+%% input list not empty => 4 cases
+% first case = first input element = a
+% therefore first output element = b
+replace_a_b_c([a|InTail], [b|OutTail]) :- replace_a_b_c(InTail,OutTail).
+
+%second case = input element = b
+replace_a_b_c([b|InTail], [c|OutTail]) :- replace_a_b_c(InTail,OutTail).
+
+%third case = input element = c
+replace_a_b_c([c|InTail], [a|OutTail]) :- replace_a_b_c(InTail,OutTail).
+
+%fourth case = input element = something else (not a, b or c)
+replace_a_b_c([X|InTail], [X|OutTail]) :- replace_a_b_c(InTail,OutTail).

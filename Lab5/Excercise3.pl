@@ -1,0 +1,9 @@
+%%Excercise 3.
+is_in(bella,anna).
+is_in(cathy,bella).
+is_in(dora,cathy).
+is_in(ella,dora).
+is_in(jane,ella).
+
+contains(X,Y) :- is_in(X,Y).
+contains(X,Y) :- is_in(Z,X), contains(Z,Y).
